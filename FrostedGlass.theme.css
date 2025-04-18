@@ -1,91 +1,482 @@
 /**
- * @name ClearVision V7 for BetterDiscord
- * @author ClearVision Team
- * @version 7.0.0
- * @description Highly customizable theme for BetterDiscord.
- * @source https://github.com/ClearVision/ClearVision-v7
- * @website https://clearvision.github.io
- * @invite dHaSxn3
- */
-/* IMPORT CSS */
-@import url("https://clearvision.github.io/ClearVision-v7/main.css");
-@import url("https://clearvision.github.io/ClearVision-v7/betterdiscord.css");
-/* SETTINGS */
+ * @name RadialStatus
+ * @author Gibbu#1211 / disguised.owl
+ * @version 3.0.0
+ * @description Changes the status icons to wrap around the avatar. Shape can be changed inside the theme file.
+ * @source https://github.com/DiscordStyles/RadialStatus
+ * @invite ZHthyCw
+*/
+
 :root {
-  /* ACCENT COLORS */
-  --main-color: #f5a87fb4;
-  --hover-color: #1e63b3;
-  --success-color: #43b581;
-  --danger-color: #982929;
-  /* STATUS COLORS */
-  --online-color: #43b581;
-  --idle-color: #faa61a;
-  --dnd-color: #982929;
-  --streaming-color: #593695;
-  --offline-color: #808080;
-  /* APP BACKGROUND */
-  --background-shading-percent: 100%;
-  --background-image: url(https://wallpapercave.com/wp/wp3789068.jpg);
-  --background-attachment: fixed;
-  --background-filter: saturate(calc(var(--saturation-factor, 1) * 1));
-  /* USER POPOUT BACKGROUND */
-  --user-popout-image: var(--background-image);
-  --user-popout-attachment: var(--background-attachment);
-  --user-popout-filter: var(--background-filter);
-  /* USER MODAL BACKGROUND */
-  --user-modal-image: var(--background-image);
-  --user-modal-attachment: var(--background-attachment);
-  --user-modal-filter: var(--background-filter);
-  /* HOME ICON */
-  --home-icon: url(https://clearvision.github.io/icons/discord.svg);
-  /* FONTS */
-  --main-font: "gg sans", Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --code-font: Consolas, "gg mono", "Liberation Mono", Menlo, Courier, monospace;
+  --rs-version: "2.0.11";
 }
 
-/* THEME SPECIFIC SHADING */
-/* LIGHT THEME */
-:is(.theme-light, .theme-dark .theme-light) {
-  --background-shading: rgba(252, 252, 252, 0.3);
-  --card-shading: rgba(252, 252, 252, 0.3);
-  --popout-shading: rgba(252, 252, 252, 0.7);
-  --modal-shading: rgba(252, 252, 252, 0.5);
-  --input-shading: rgba(0, 0, 0, 0.3);
-  --normal-text: #36363c;
-  --muted-text: #75757e;
+#app-mount .wrapper__44b0c {
+  border-radius: var(--rs-avatar-shape);
+}
+#app-mount .wrapper__44b0c svg:not(:root) {
+  overflow: visible;
+  contain: none;
+}
+#app-mount .wrapper__44b0c foreignObject {
+  -webkit-mask: none;
+          mask: none;
+}
+#app-mount .wrapper__44b0c .dots__5ad89 circle {
+  cy: -8 !important;
+}
+#app-mount .wrapper__44b0c .dots__5ad89 circle:nth-child(1) {
+  cx: -8.5 !important;
+}
+#app-mount .wrapper__44b0c .dots__5ad89 circle:nth-child(2) {
+  cx: -2.25 !important;
+}
+#app-mount .wrapper__44b0c .dots__5ad89 circle:nth-child(3) {
+  cx: 4 !important;
+}
+#app-mount .wrapper__44b0c .mask__44b0c > rect[x="22"] {
+  x: 0;
+  y: 0;
+}
+#app-mount .wrapper__44b0c .mask__44b0c > circle {
+  opacity: 0 !important;
+  width: 100%;
+  height: 100%;
+  cx: 43%;
+  cy: 20;
+}
+#app-mount .wrapper__44b0c .pointerEvents__44b0c[x="14.5"] {
+  fill: rgba(0, 0, 0, 0.5) !important;
+  width: var(--rs-members-width, 30px);
+  height: var(--rs-members-width, 30px);
+  x: calc(var(--rs-members-width, 30px) / 2 / -1 + 2px);
+  y: calc(var(--rs-members-width, 30px) / 2 / -1);
+}
+#app-mount .wrapper__44b0c img, #app-mount .wrapper__44b0c.avatar__91a9d {
+  border-radius: var(--rs-avatar-shape);
+}
+#app-mount .wrapper__44b0c svg[width="25"][height="15"] > rect {
+  rx: calc(var(--rs-avatar-shape) * 2) !important;
+  ry: calc(var(--rs-avatar-shape) * 2) !important;
+}
+#app-mount .wrapper__44b0c[style*="80px"] svg.cursorDefault__44b0c rect, #app-mount .wrapper__44b0c[style*="120px"] svg.cursorDefault__44b0c rect {
+  ry: calc(var(--rs-avatar-shape) * 3.3);
+  rx: calc(var(--rs-avatar-shape) * 3.3);
+}
+#app-mount .wrapper__44b0c rect {
+  x: 0;
+  y: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-mask: none;
+          mask: none;
+  display: block;
+  rx: var(--rs-avatar-shape);
+  ry: var(--rs-avatar-shape);
+  fill: transparent !important;
+  stroke-width: var(--rs-small-width);
+}
+#app-mount .wrapper__44b0c rect[fill="#23a55a"], #app-mount .wrapper__44b0c rect[fill="#40a258"] {
+  stroke: var(--rs-online-color);
+}
+#app-mount .wrapper__44b0c rect[fill="#f0b232"], #app-mount .wrapper__44b0c rect[fill="#cc954c"] {
+  stroke: var(--rs-idle-color);
+}
+#app-mount .wrapper__44b0c rect[fill="#f23f43"], #app-mount .wrapper__44b0c rect[fill="#d83a41"] {
+  stroke: var(--rs-dnd-color);
+}
+#app-mount .wrapper__44b0c rect[fill="#593695"], #app-mount .wrapper__44b0c rect[mask*=streaming], #app-mount .wrapper__44b0c rect[fill*="var(--status-purple"] {
+  stroke: var(--rs-streaming-color);
+}
+#app-mount .wrapper__44b0c rect[fill="#80848e"] {
+  stroke: var(--rs-offline-color);
+}
+#app-mount .wrapper__44b0c rect[fill="#82858f"], #app-mount .wrapper__44b0c rect[fill="#82838b"] {
+  stroke: var(--rs-invisible-color);
+}
+#app-mount .wrapper__44b0c rect[x="16"] {
+  width: 24px;
+  height: 24px;
+}
+#app-mount .wrapper__44b0c rect[x="28"] {
+  width: 40px;
+  height: 40px;
+  overflow: visible;
+}
+#app-mount .wrapper__44b0c[style*="32px"] rect {
+  width: 32px;
+  height: 32px;
+  x: -14.5;
+  y: -17;
+  position: relative;
+  z-index: 0;
+}
+#app-mount .wrapper__44b0c[style*="40px"] > svg > svg rect {
+  width: 40px;
+  height: 40px;
+  x: -19;
+  y: -20;
+  ry: calc(var(--rs-avatar-shape) * 3.3);
+  rx: calc(var(--rs-avatar-shape) * 3.3);
+}
+#app-mount .wrapper__44b0c[style*="40px"] foreignObject[mask*=mobile] img {
+  width: calc(100% - 18px);
+}
+#app-mount .wrapper__44b0c[style*="80px"] svg.cursorDefault__44b0c rect {
+  x: -48;
+  y: -52;
+}
+#app-mount .wrapper__44b0c[style*="80px"] rect {
+  width: 80px;
+  height: 80px;
+  stroke-width: var(--rs-medium-width);
+}
+#app-mount .wrapper__44b0c[style*="80px"] img {
+  clip-path: inset(calc(var(--rs-medium-spacing) + 1px) calc(var(--rs-medium-spacing) + 1px) round var(--rs-avatar-shape));
+}
+#app-mount .wrapper__44b0c[style*="120px"] svg.cursorDefault__44b0c rect {
+  x: -70;
+  y: -76;
+}
+#app-mount .wrapper__44b0c[style*="120px"] rect {
+  width: 120px;
+  height: 120px;
+  stroke-width: var(--rs-large-width);
+  pointer-events: none;
+}
+#app-mount .wrapper__44b0c[style*="120px"] img {
+  clip-path: inset(calc(var(--rs-large-spacing) + 1px) calc(var(--rs-large-spacing) + 1px) round var(--rs-avatar-shape));
+}
+#app-mount .wrapper__44b0c:not([style*="80px;"], [style*="120px;"], [style*="16px"]) > svg > foreignObject:not(:only-child) img {
+  clip-path: inset(calc(var(--rs-small-spacing) + 1px) calc(var(--rs-small-spacing) + 1px) round var(--rs-avatar-shape));
+}
+#app-mount .wrapper__44b0c[style="width: 16px; height: 16px;"] rect {
+  display: none;
+}
+#app-mount .wrapper__44b0c[style="width: 16px; height: 16px;"] img {
+  clip-path: none;
+}
+#app-mount .wrapper__44b0c foreignObject[mask*=mobile] {
+  property: inherit;
+}
+#app-mount .wrapper__44b0c foreignObject[mask*=mobile][width="24"]:after {
+  width: 10px;
+  height: 12px;
+  top: 30%;
+}
+#app-mount .wrapper__44b0c foreignObject[mask*=mobile][width="32"]:after {
+  width: 10px;
+  height: 14px;
+  top: 30%;
+}
+#app-mount .wrapper__44b0c foreignObject[mask*=mobile][width="80"]:after {
+  width: 14px;
+  height: 18px;
+}
+#app-mount .wrapper__44b0c foreignObject[mask*=mobile][width="120"]:after {
+  width: 24px;
+  height: 20px;
+}
+#app-mount .wrapper__44b0c foreignObject[mask*=mobile]:after {
+  content: "";
+  display: var(--rs-phone-visible, block);
+  -webkit-mask: url('data:image/svg+xml; utf-8,<svg aria-hidden="true" focusable="false" data-prefix="fas" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M272 0H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h224c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zM160 480c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm112-108c0 6.6-5.4 12-12 12H60c-6.6 0-12-5.4-12-12V60c0-6.6 5.4-12 12-12h200c6.6 0 12 5.4 12 12v312z"></path></svg>') center no-repeat;
+          mask: url('data:image/svg+xml; utf-8,<svg aria-hidden="true" focusable="false" data-prefix="fas" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M272 0H48C21.5 0 0 21.5 0 48v416c0 26.5 21.5 48 48 48h224c26.5 0 48-21.5 48-48V48c0-26.5-21.5-48-48-48zM160 480c-17.7 0-32-14.3-32-32s14.3-32 32-32 32 14.3 32 32-14.3 32-32 32zm112-108c0 6.6-5.4 12-12 12H60c-6.6 0-12-5.4-12-12V60c0-6.6 5.4-12 12-12h200c6.6 0 12 5.4 12 12v312z"></path></svg>') center no-repeat;
+  position: absolute;
+  right: 0%;
+  bottom: 0%;
+  background: var(--rs-phone-color, var(--rs-online-color));
+  z-index: 1;
+}
+#app-mount .wrapper__44b0c foreignObject[mask*=mobile] + rect {
+  stroke: var(--rs-phone-color, var(--rs-online-color));
+}
+#app-mount .avatarWrapper__37e49 .mask__44b0c > g {
+  transform: none !important;
+}
+#app-mount .avatarWrapper__37e49 .mask__44b0c > g rect {
+  width: var(--rs-user-area-size, 40px);
+  height: var(--rs-user-area-size, 40px);
+  rx: calc(var(--rs-avatar-shape) * 2) !important;
+  ry: calc(var(--rs-avatar-shape) * 2) !important;
+}
+#app-mount .avatarSpeaking__44b0c {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  border-radius: var(--rs-avatar-shape);
+  box-shadow: inset 0 0 0 2px var(--rs-self-speaking-colour, #57d39b), inset 0 0 0 3px var(--background-secondary);
+}
+#app-mount .message__5126c .wrapper__44b0c foreignObject[mask*=mobile] {
+  width: calc(100% + 3px);
+}
+#app-mount .message__5126c .wrapper__44b0c rect[mask*=typing] {
+  width: calc(100% - 9px);
+}
+#app-mount .avatarHint_f89da9 foreignObject {
+  -webkit-mask: none;
+          mask: none;
+}
+#app-mount .avatarHintInner_f89da9 {
+  border-radius: var(--rs-avatar-shape) !important;
+  padding-top: 0;
+  width: calc(100% - var(--rs-medium-width) - var(--rs-medium-spacing) + 2px);
+  height: calc(100% - var(--rs-medium-width) - var(--rs-medium-spacing) + 2px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: relative;
+}
+#app-mount .memberOffline-2lN7gt img {
+  clip-path: none !important;
+}
+#app-mount .offline__5d473 img {
+  clip-path: none !important;
+}
+#app-mount .avatarWrapperNonUserBot_f89da9 .wrapper__44b0c img {
+  clip-path: none !important;
+}
+#app-mount .userInfo__0a06e .wrapper__44b0c {
+  margin-top: 1px;
+  margin-left: 1px;
+}
+#app-mount .info__2debe .line__2debe:last-child:after {
+  content: "RadialStatus " var(--rs-version);
+  display: block;
 }
 
-/* ASH THEME */
-:is(.theme-dark, .theme-light .theme-dark) {
-  --background-shading: rgba(0, 0, 0, 0.4);
-  --card-shading: rgba(0, 0, 0, 0.2);
-  --popout-shading: rgba(0, 0, 0, 0.6);
-  --modal-shading: rgba(0, 0, 0, 0.4);
-  --input-shading: rgba(255, 255, 255, 0.05);
-  --normal-text: #d8d8db;
-  --muted-text: #aeaeb4;
+
+
+
+:root {
+  /*
+    * Spacing
+    */
+  --rs-small-spacing: 2px; /* Gap between avatar and status for members list/dms | MUST end in px */
+  --rs-medium-spacing: 3px; /* Gap between avatar and status for User popout | MUST end in px */
+  --rs-large-spacing: 4px; /* Gap between avatar and status for User profiles | MUST end in px */
+  /*
+    * Widths
+    */
+  --rs-small-width: 2px; /* Thickness of status border for members list/dms | MUST end in px */
+  --rs-medium-width: 3px; /* Thickness of status border for User popout | MUST end in px */
+  --rs-large-width: 4px; /* Thickness of status border for User profile | MUST end in px */
+  /*
+    * Shape
+    */
+  --rs-avatar-shape: 50%; /* 50% for round - 0% for square */
+  /*
+    * Colours
+    */
+  --rs-online-color: #43b581; /* Colour for online status */
+  --rs-idle-color: #faa61a; /* Colour for idle status */
+  --rs-dnd-color: #f04747; /* Colour for dnd status */
+  --rs-offline-color: #636b75; /* Colour for offline status */
+  --rs-streaming-color: #643da7; /* Colour for streaming status */
+  --rs-invisible-color: #747f8d; /* Colour for invisible status - Note: this will only show for your own invisibility */
+  --rs-self-speaking-color: #57d39b; /* Colour for speaking ring in the bottom left while in a voice chat/call */
+  --rs-phone-color: var(--rs-online-color); /* Colour of the ring & phone icon  */
+  /*
+    * Others
+    */
+  --rs-phone-visible: block; /* Visibility of the phone icon next to a users avatar. | block = visible | none = hidden */
 }
 
-/* DARK THEME */
-:is(.theme-darker, .theme-light .theme-darker) {
-  --background-shading: rgba(0, 0, 0, 0.6);
-  --card-shading: rgba(0, 0, 0, 0.3);
-  --popout-shading: rgba(0, 0, 0, 0.7);
-  --modal-shading: rgba(0, 0, 0, 0.5);
-  --input-shading: rgba(255, 255, 255, 0.05);
-  --normal-text: #fbfbfb;
-  --muted-text: #94949c;
+/* custom chat bar input text  */
+
+/* hide existing text */
+.placeholder__1b31f.slateTextArea_ec4baf.fontSize16Padding__74017 {
+    visibility: hidden;
 }
 
-/* ONYX THEME */
-:is(.theme-midnight, .theme-light .theme-midnight) {
-  --background-shading: rgba(0, 0, 0, 0.8);
-  --card-shading: rgba(0, 0, 0, 0.4);
-  --popout-shading: rgba(0, 0, 0, 0.8);
-  --modal-shading: rgba(0, 0, 0, 0.6);
-  --input-shading: rgba(255, 255, 255, 0.05);
-  --normal-text: #dcdcde;
-  --muted-text: #86868e;
+/* add custom text */
+.placeholder__1b31f.slateTextArea_ec4baf.fontSize16Padding__74017::before {
+    visibility: visible;
+    content: var(--prompt-text); /* replace var() with your desired text (in quotes) */
+    
+    /* for example:
+    
+    content: "i like snow cones";
+    
+    */
+}
+.background__1fed1 {
+    background-color: transparent;
+    padding: 0;
+}
+.fieldList__1fed1 {
+    background-color: transparent;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5px;
+}
+.field__1fed1 {
+    width: 100%;
+    border-radius: 8px;
+    background-color: var(--background-primary);
+    max-height: unset;
+    flex-direction: column;
+    display: flex;
+    padding: 15px;
+    margin-top: 0;
+    overflow-y: auto;
+    height: 120px;
+    margin-bottom: 0;
+}
+.field__1fed1 .fieldButton__1fed1 {
+    background-color: var(--button-secondary-background);
+    border-radius: 6px;
+    -webkit-transition: background-color .17s ease,color .17s ease;
+    transition: background-color .17s ease,color .17s ease;
+}
+.field__1fed1 .fieldButton__1fed1:hover {
+    background-color: var(--button-secondary-background-hover);
+}
+.field__1fed1 .fieldButton__1fed1:hover > div {
+    background: none;
+}
+.field__1fed1 .fieldButton__1fed1 {
+    width: 100%;
+    margin-right: 0;
+    position: relative;
+}
+.field__1fed1 .fieldButtonList__1fed1 {
+    gap: 5px;
+}
+.field__1fed1::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+}
+.field__1fed1::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+.field__1fed1::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-auto-thumb);
+    min-height: 40px;
+}
+.field__1fed1::-webkit-scrollbar-track {
+    background-color: var(--scrollbar-auto-track);
+}
+.field__1fed1::-webkit-scrollbar-thumb,
+.field__1fed1::-webkit-scrollbar-track {
+    border: 4px solid transparent;
+    background-clip: padding-box;
+    border-radius: 8px;
 }
 
-/* ADD ADDITIONAL CSS BELOW HERE */
+
+/* DM */
+:root {
+    --gDM-online: linear-gradient(to right, rgb(68, 105, 68) , transparent);
+    --gDM-offline: linear-gradient(to right, rgb(66, 66, 66) , transparent);
+    --gDM-dnd: linear-gradient(to right, rgb(130,70,70) , transparent);
+    --gDM-idle: linear-gradient(to right, rgb(135, 105, 75) , transparent);
+    --gDM-streaming: linear-gradient(to right, rgb(63, 33, 88) , transparent);
+    --gDM-border-radius: 12px;
+}
+
+ul > li > [class*="interactive_"] {
+    border-radius: var(--gDM-border-radius);
+    margin: 0.3px;
+}
+
+[class^="link_"]:has([mask*="online"], [fill="#43a25a"]) {
+    background: var(--gDM-online);
+}
+[class^="link_"]:has([mask*="offline"], [fill="#80848e"]) {
+    background: var(--gDM-offline);
+}
+[class^="link_"]:has([mask*="dnd"], [fill="#d83a42"]) {
+    background: var(--gDM-dnd);
+}
+[class^="link_"]:has([mask*="idle"], [fill="#ca9654"]) {
+    background: var(--gDM-idle);
+}
+[class^="link_"]:has([mask*="streaming"], [fill="#9147ff"]) {
+    background: var(--gDM-streaming);
+}
+/* make the pill fill all of the memberlist */
+[class*="memberInner_"][class*="layout_"] {width: 100%}
+
+/* ML */
+:root {
+    --gDM-online: linear-gradient(to right, rgb(68, 105, 68) , transparent);
+    --gDM-offline: linear-gradient(to right, rgb(66, 66, 66) , transparent);
+    --gDM-dnd: linear-gradient(to right, rgb(130,70,70) , transparent);
+    --gDM-idle: linear-gradient(to right, rgb(135, 105, 75) , transparent);
+    --gDM-streaming: linear-gradient(to right, rgb(63, 33, 88) , transparent);
+    --gDM-border-radius: 12px;
+}
+
+div > [class*="layout_"] {
+    border-radius: var(--gDM-border-radius);
+    margin: 0.3px;
+}
+
+[class^="memberInner"]:has([mask*="online"], [fill="#43a25a"]) {
+    background: var(--gDM-online);
+}
+[class^="memberInner"]:has([mask*="offline"], [fill="#f0b232"]) {
+    background: var(--gDM-offline);
+}
+[class^="memberInner"]:has([mask*="dnd"], [fill="#d83a42"]) {
+    background: var(--gDM-dnd);
+}
+[class^="memberInner"]:has([mask*="idle"], [fill="#ca9654"]) {
+    background: var(--gDM-idle);
+}
+[class^="memberInner"]:has([mask*="streaming"], [fill="#9147ff"]) {
+    background: var(--gDM-streaming);
+}
+/* make the pill fill all of the memberlist */
+[class*="memberInner_"][class*="layout_"] {width: 100%}
+
+:root {
+    --gDM-online: linear-gradient(to right, rgb(68, 105, 68) , transparent);
+    --gDM-offline: linear-gradient(to right, rgb(66, 66, 66) , transparent);
+    --gDM-dnd: linear-gradient(to right, rgb(130,70,70) , transparent);
+    --gDM-idle: linear-gradient(to right, rgb(135, 105, 75) , transparent);
+    --gDM-streaming: linear-gradient(to right, rgb(63, 33, 88) , transparent);
+    --gDM-border-radius: 12px;
+}
+
+:root {
+    --prompt-text: "be silly :3"; /* replace --prompt-text with your desired text if you want */
+}
+
+.visual-refresh section[aria-label="User area"] {
+    width: calc(var(--custom-guild-sidebar-width) - var(--custom-guild-list-width) + 1px);;
+    left: var(--custom-guild-list-width);
+    bottom: 0px;
+    border-radius: 0px;
+    border: none;
+}
+
+.visual-refresh nav:has([data-list-id="guildsnav"]) {
+  margin-bottom: unset;
+}
+
+
+.icon_f34534.guildIcon__48112 { border-radius: 50% !important }
+
+/* Transgender Boost Gradient; Recolors the boosting gradient to be the best flag ever */
+body {
+    --guild-boosting-blue: #60d0fa, #f5acba, #ffffff;
+    --guild-boosting-purple: #ffffff, #f5acba, #60d0fa;
+}
+
+[id*="popout_"]::after, [class*=menu]::after {
+    content: "";
+    position: absolute;
+    top: -40px;
+    left: 5%;
+    right: 5%;
+    width: 90%;
+    height: 40px;
+    background-image: url('https://media.discordapp.net/stickers/1217112512374505613.png');
+    background-size: contain;
+    background-repeat: repeat-x;
+}
+

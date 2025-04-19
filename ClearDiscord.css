@@ -1,11 +1,99 @@
 /**
- * @name RadialStatus
- * @author Gibbu#1211 / disguised.owl
- * @version 3.0.0
- * @description Changes the status icons to wrap around the avatar. Shape can be changed inside the theme file.
- * @source https://github.com/DiscordStyles/RadialStatus
- * @invite ZHthyCw
-*/
+ * @name ClearDiscord
+ * @author ClearVision Team  / disguised.owl
+ * @version 7.0.0
+ * @description Highly customizable theme for BetterDiscord.
+ * @source https://github.com/ClearVision/ClearVision-v7
+ * @website https://clearvision.github.io
+ * @invite dHaSxn3
+ */
+
+/* IMPORT CSS */
+@import url("https://clearvision.github.io/ClearVision-v7/main.css");
+@import url("https://clearvision.github.io/ClearVision-v7/betterdiscord.css");
+/* SETTINGS */
+:root {
+  /* ACCENT COLORS */
+  --main-color: #ce93c7;
+  --hover-color: #1e63b3;
+  --success-color: #43b581;
+  --danger-color: #982929;
+  /* STATUS COLORS */
+  --online-color: #43b581;
+  --idle-color: #faa61a;
+  --dnd-color: #982929;
+  --streaming-color: #593695;
+  --offline-color: #808080;
+  /* APP BACKGROUND */
+  --background-shading-percent: 100%;
+  --background-image: url(https://rare-gallery.com/mocahbig/419987-Unix-Linux-iOS-MacBook-arch-Ubuntu-programming.jpg);
+  --background-attachment: fixed;
+  --background-filter: saturate(calc(var(--saturation-factor, 1) * 1));
+  /* USER POPOUT BACKGROUND */
+  --user-popout-image: var(--background-image);
+  --user-popout-attachment: var(--background-attachment);
+  --user-popout-filter: var(--background-filter);
+  /* USER MODAL BACKGROUND */
+  --user-modal-image: var(--background-image);
+  --user-modal-attachment: var(--background-attachment);
+  --user-modal-filter: var(--background-filter);
+  --background-filter: saturate(calc(var(--saturation-factor, 1) * 1)) blur(3px);
+
+  /* HOME ICON */
+  --home-icon: url(https://clearvision.github.io/icons/discord.svg);
+  /* FONTS */
+  --main-font: "gg sans", Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --code-font: Consolas, "gg mono", "Liberation Mono", Menlo, Courier, monospace;
+
+}
+
+/* THEME SPECIFIC SHADING */
+/* LIGHT THEME */
+:is(.theme-light, .theme-dark .theme-light) {
+  --background-shading: rgba(49, 34, 47, 0.2);
+  --card-shading: rgba(107, 58, 101, 0.2);
+  --popout-shading: rgba(49, 34, 47, 0.6);
+  --modal-shading: rgba(49, 34, 47, 0.4);
+  --input-shading: rgba(255, 255, 255, 0.05);
+  --normal-text: #e4c2e0;
+  --muted-text: #b9abb9;
+}
+
+/* ASH THEME */
+:is(.theme-dark, .theme-light .theme-dark) {
+  --background-shading: rgba(49, 34, 47, 0.2);
+  --card-shading: rgba(107, 58, 101, 0.2);
+  --popout-shading: rgba(49, 34, 47, 0.6);
+  --modal-shading: rgba(49, 34, 47, 0.4);
+  --input-shading: rgba(255, 255, 255, 0.05);
+  --normal-text: #e4c2e0;
+  --muted-text: #b9abb9;
+}
+
+/* DARK THEME */
+:is(.theme-darker, .theme-light .theme-darker) {
+  --background-shading: rgba(49, 34, 47, 0.2);
+  --card-shading: rgba(107, 58, 101, 0.2);
+  --popout-shading: rgba(49, 34, 47, 0.6);
+  --modal-shading: rgba(49, 34, 47, 0.4);
+  --input-shading: rgba(255, 255, 255, 0.05);
+  --normal-text: #e4c2e0;
+  --muted-text: #b9abb9;
+}
+
+/* ONYX THEME */
+:is(.theme-midnight, .theme-light .theme-midnight) {
+  --background-shading: rgba(49, 34, 47, 0.2);
+  --card-shading: rgba(107, 58, 101, 0.2);
+  --popout-shading: rgba(49, 34, 47, 0.6);
+  --modal-shading: rgba(49, 34, 47, 0.4);
+  --input-shading: rgba(255, 255, 255, 0.05);
+  --normal-text: #e4c2e0;
+  --muted-text: #b9abb9;
+}
+
+/* ADD ADDITIONAL CSS BELOW HERE */
+
 
 :root {
   --rs-version: "2.0.11";
@@ -371,7 +459,7 @@
 :root {
     --gDM-online: linear-gradient(to right, rgb(68, 105, 68) , transparent);
     --gDM-offline: linear-gradient(to right, rgb(66, 66, 66) , transparent);
-    --gDM-dnd: linear-gradient(to right, rgb(130,70,70) , transparent);
+    --gDM-dnd: linear-gradient(to right, rgb(255, 0, 0) , transparent);
     --gDM-idle: linear-gradient(to right, rgb(135, 105, 75) , transparent);
     --gDM-streaming: linear-gradient(to right, rgb(63, 33, 88) , transparent);
     --gDM-border-radius: 12px;
@@ -434,11 +522,11 @@ div > [class*="layout_"] {
 [class*="memberInner_"][class*="layout_"] {width: 100%}
 
 :root {
-    --gDM-online: linear-gradient(to right, rgb(68, 105, 68) , transparent);
-    --gDM-offline: linear-gradient(to right, rgb(66, 66, 66) , transparent);
-    --gDM-dnd: linear-gradient(to right, rgb(130,70,70) , transparent);
-    --gDM-idle: linear-gradient(to right, rgb(135, 105, 75) , transparent);
-    --gDM-streaming: linear-gradient(to right, rgb(63, 33, 88) , transparent);
+    --gDM-online: linear-gradient(to right, rgba(68, 105, 68, 0.801) , transparent);
+    --gDM-offline: linear-gradient(to right, rgba(66, 66, 66, 0.493) , transparent);
+    --gDM-dnd: linear-gradient(to right, rgba(130, 70, 70, 0.801) , transparent);
+    --gDM-idle: linear-gradient(to right, rgba(135, 105, 75, 0.473) , transparent);
+    --gDM-streaming: linear-gradient(to right, rgba(84, 32, 126, 0.801) , transparent);
     --gDM-border-radius: 12px;
 }
 
@@ -470,13 +558,246 @@ body {
 [id*="popout_"]::after, [class*=menu]::after {
     content: "";
     position: absolute;
-    top: -40px;
+    top: -65px;
     left: 5%;
     right: 5%;
     width: 90%;
-    height: 40px;
-    background-image: url('https://media.discordapp.net/stickers/1217112512374505613.png');
+    height: 65px;
+    background-image: url('https://media.discordapp.net/stickers/1253883451644579881.png');
     background-size: contain;
     background-repeat: repeat-x;
 }
+.profileBadges__7a7cb.profileBadges__7a7cb {
+  flex: none;
+}
 
+
+#vc-spotify-player {
+    --blur-amount: 4px; /* higher px = stronger blur, 0 = no blur */
+    --darken-percent: 0.7; /* 0 = album cover is not darkened, 1 = album cover is darkened fully (black) */
+}
+
+#vc-spotify-player {
+    background: transparent !important;
+    position: relative;
+}
+
+#vc-spotify-player > * {
+    position: relative;
+    z-index: 1;
+}
+
+#vc-spotify-player::after {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(rgba(0, 0, 0, var(--darken-percent)),
+            rgba(0, 0, 0, var(--darken-percent))), var(--vc-spotify-track-image);
+    background-size: cover;
+    filter: blur(var(--blur-amount));
+    clip-path: inset(0);
+
+#vc-spotify-player + [class^="container"]
+    background: transparent;
+}
+
+#message-actions-pin, #message-pin, #message-unpin{
+    color: skyblue;
+}
+#message-actions-pin:hover, #message-pin:hover, #message-unpin:hover {
+    background-color: #67a7c0;
+    color: #fff;
+}
+#message-actions-reply, #message-reply {
+    color: khaki;
+}
+#message-actions-reply:hover, #message-reply:hover {
+    background-color: #c5bb5d;
+    color: #fff;
+}
+#message-actions-thread, #message-thread {
+    color: #69c069;
+}
+#message-actions-thread:hover, #message-thread:hover {
+    background-color: #5dbd5d;
+    color: #fff;
+}
+#message-actions-mark-unread, #message-mark-unread {
+    color: plum;
+}
+#message-actions-mark-unread:hover, #message-mark-unread:hover {
+    background-color: #c27ec2;
+    color: #fff;
+}
+#message-actions-copy-link, #message-copy-link {
+    color: lightseagreen;
+}
+#message-actions-copy-link:hover, #message-copy-link:hover {
+    background-color: #199c96;
+    color: #fff;
+}
+#message-actions-tts, #message-tts{
+    color: var(--brand-experiment);
+}
+#message-actions-tts:hover, #message-tts:hover{
+    background-color: var(--brand-experiment);
+    color: #fff;
+}
+#message-actions-copy-id, #message-devmode-copy-id {
+    color: lightsalmon;
+}
+#message-actions-copy-id:hover #message-devmode-copy-id:hover{
+    background-color: lightsalmon;
+    color: #fff;
+}
+#message-edit, #message-actions-edit{
+    color: steelblue;
+}
+#message-edit:hover,  #message-actions-edit:hover{
+    background-color: steelblue;
+    color: #fff;
+}
+#message-add-reaction{
+    color: goldenrod;
+}
+#message-add-reaction:hover{
+    background-color: goldenrod;
+    color: #fff;
+}
+
+/* FOR NOW ICONS URL NOT UPDATED YET */
+/*@import url(https://github.com/Krekevyks/BetterConnectedAccounts/blob/main/NewIcons.css); if you dont want use new icons remove this line  */
+
+:root {
+  --tiktok: #ff0050;
+  --instagram: #f09433;
+  --theme-name: "BetterConnectedAccounts";
+  --theme-version: "0.5";
+  --radius: 4px; /* if you dont want rounded corners change 4px to 0 */
+}
+
+.connectedAccountContainer_e6abe8:has([aria-label="Spotify"]) {
+  --color: var(--spotify);
+}
+
+.connectedAccountContainer_e6abe8:has([aria-label="Twitch"]) {
+  --color: var(--twitch);
+}
+
+.connectedAccountContainer_e6abe8:has([aria-label="YouTube"]) {
+  --color: var(--youtube);
+}
+
+.connectedAccountContainer_e6abe8:has([aria-label="Reddit"]) {
+  --color: var(--reddit);
+}
+
+.connectedAccountContainer_e6abe8:has([aria-label="PayPal"]) {
+  --color: var(--paypall);
+}
+
+.connectedAccountContainer_e6abe8:has([aria-label="TikTok"]) {
+  --color: var(--tiktok);
+}
+
+.connectedAccountContainer_e6abe8:has([aria-label="Steam"]) {
+  --color: var(--steam);
+}
+
+.connectedAccountContainer_e6abe8:has([aria-label="Crunchyroll"]) {
+  --color: var(--cruchyroll);
+}
+
+.connectedAccountContainer_e6abe8:has([aria-label="eBay"]) {
+  --color: var(--ebay);
+}
+
+.connectedAccountContainer_e6abe8:has([aria-label="Xbox"]) {
+  --color: var(--xbox);
+}
+
+.connectedAccountContainer_e6abe8:has([aria-label="Battle.net"]) {
+  --color: var(--battlenet);
+}
+
+.connectedAccountContainer_e6abe8:has([aria-label="PlayStation Network"]) {
+  --color: var(--playstation);
+}
+
+.connectedAccountContainer_e6abe8:has([aria-label="Epic Games"]) {
+  --color: var(--epic-games);
+}
+
+.connectedAccountContainer_e6abe8:has([aria-label="GitHub"]) {
+  --color: var(--github);
+}
+
+.connectedAccountContainer_e6abe8:has([aria-label="X"]) {
+  --color: var(--twitter);
+}
+
+.connectedAccountContainer_e6abe8:has([aria-label="League of Legends"]) {
+  --color: var(--lol);
+}
+
+.connectedAccountContainer_e6abe8:has([aria-label="Twitter"]) {
+  --color: var(--twitter);
+}
+
+.connectedAccountContainer_e6abe8:has([aria-label="Instagram"]) {
+  --color: var(--instagram);
+}
+
+.connectedAccountContainer_e6abe8:has([aria-label="Riot Games"]) {
+  --color: var(--riot-games);
+}
+
+.connectedAccountContainer_e6abe8:has([aria-label="Skype"]) {
+  --color: var(--skype);
+}
+
+.connectedAccountContainer_e6abe8:has([aria-label="Facebook"]) {
+  --color: var(--facebook);
+}
+
+.connectedAccountContainer_e6abe8 {
+  border: none;
+  background: var(--color);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5) inset;
+  border-radius: var(--radius);
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.connectedAccountIcon_e6abe8 {
+  filter: drop-shadow(3px 2px 1px rgb(25 41 35 / 0.5));
+}
+
+.connectedAccountOpenIcon_e6abe8,
+.connectedAccountNameText_e6abe8 {
+  color: white !important;
+  filter: drop-shadow(3px 2px 1px rgb(25 41 35 / 0.5));
+}
+
+.connectedAccountVerifiedIcon_e6abe8 .flowerStarContainer__3e3b0 path {
+  fill: rgb(0 0 0 / 1);
+}
+
+.connectedAccountContainer_e6abe8 childContainer__3e3b0 > svg > path {
+  fill: white;
+}
+
+.connectedAccountContainer_e6abe8 childContainer__3e3b0 {
+  filter: drop-shadow(3px 2px 1px rgb(25 41 35 / 0.5));
+}
+
+.info__2debe::before {
+  content: var(--theme-name) " " var(--theme-version);
+  color: var(--text-muted);
+  position: relative;
+  font-size: 12px;
+}

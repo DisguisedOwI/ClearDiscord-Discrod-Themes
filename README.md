@@ -1,4 +1,4 @@
-# ClearDiscord Discrod-Theme
+# ClearDiscord Discrod-Themes
 
 Download the Theme and to
 - Vencord: `%appdata%\vencord\themes`
